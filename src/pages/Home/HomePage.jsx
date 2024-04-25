@@ -1,12 +1,11 @@
-import { Button, Table } from 'antd'
-import { LoadingSpin } from 'src/components';
+import { Button, Table } from 'antd';
 
 const HomePage = () => {
-  return (
-    <>
-      <Button>Home Page</Button>
-    </>
-  )
-}
+	return (
+		<>
+			<Button>Home Page</Button>
+		</>
+	);
+};
 
-export default HomePage
+export default HomePage;

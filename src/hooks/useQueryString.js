@@ -2,39 +2,38 @@ import { useMemo } from 'react';
 import { createSearchParams, useSearchParams } from 'react-router-dom';
 
 const useQueryString = () => {
-	const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-	const searchParamsObject = useMemo(() => {
-		const searchParamsObject = {};
+  const searchParamsObject = useMemo(() => {
+    const searchParamsObject = {};
 
-		[...searchParams].forEach(([key, value]) => {
-			if (searchParamsObject[key]) {
-				if (Array.isArray(searchParamsObject[key])) {
-					(searchParamsObject[key]).push(value);
-				} else {
-					searchParamsObject[key] = [searchParamsObject, value];
-				}
-				return;
-			}
+    [...searchParams].forEach(([key, value]) => {
+      if (searchParamsObject[key]) {
+        if (Array.isArray(searchParamsObject[key])) {
+          searchParamsObject[key].push(value);
+        } else {
+          searchParamsObject[key] = [searchParamsObject, value];
+        }
+        return;
+      }
 
-			searchParamsObject[key] = value;
-		});
+      searchParamsObject[key] = value;
+    });
 
-		return searchParamsObject;
-	}, [searchParams]);
+    return searchParamsObject;
+  }, [searchParams]);
 
-	const parseQueryString = (queryString) => {
-		const searchParams = createSearchParams(queryString);
+  const parseQueryString = (queryString) => {
+    const searchParams = createSearchParams(queryString);
 
-		return searchParams;
-	};
+    return searchParams;
+  };
 
-	return {
-		queryString: { ...searchParamsObject },
-		setQueryString: setSearchParams,
-		parseQueryString,
-	};
+  return {
+    queryString: { ...searchParamsObject },
+    setQueryString: setSearchParams,
+    parseQueryString,
+  };
 };
-
 
 export default useQueryString;

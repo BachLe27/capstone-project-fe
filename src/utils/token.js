@@ -35,7 +35,7 @@ const getRefreshToken = () => {
  * Set refresh token to cookie
  * @param refreshToken
  */
-const setRefreshToken = (refreshToken: string) => {
+const setRefreshToken = (refreshToken) => {
   const cookieOptions = {
     expires: 30, // Expires in 30 days
   };

@@ -34,10 +34,11 @@ module.exports = {
   plugins: ['react', 'unused-imports'],
   settings: {
     'import/resolver': {
-      "node": {
-        "extensions": [".js", ".jsx"]
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
       alias: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         map: [['@', './src']],
       },
     },
@@ -50,6 +51,10 @@ module.exports = {
     'react/prop-types': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'import/no-cycle': 'off',
+    'import/no-unresolved': [
+      'error',
+      { ignore: ['\\.svg\\?react$', '/assets/icons'] },
+    ],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'prettier/prettier': [

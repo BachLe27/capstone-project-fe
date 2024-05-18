@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Logo = ({ size = 'medium' }) => {
   if (size === 'small')
     return (

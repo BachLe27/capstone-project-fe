@@ -1,4 +1,4 @@
-import { Flex, Layout } from 'antd';
+import { Flex, Layout, Typography } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { Outlet } from 'react-router-dom';
 
@@ -30,9 +30,12 @@ const AuthenticationLayout = ({ children }) => {
           margin: 0,
           borderTop: `1px solid ${palette.gray[30]}`,
           height: 64,
+          backgroundColor: '#fff',
         }}
       >
-        Footer
+        <Flex justify="center">
+          <Typography>Copyright2024©GeniFast</Typography>
+        </Flex>
       </Footer>
     </Layout>
   );

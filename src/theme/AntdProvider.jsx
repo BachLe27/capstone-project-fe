@@ -10,7 +10,6 @@ const AntdProvider = ({ children }) => {
           colorPrimary: palette.ultramarine[70],
           fontFamily: 'Inter',
           colorInfo: palette.ultramarine[70],
-          fontSize: 16,
           borderRadius: 8,
         },
         components: {
@@ -21,14 +20,20 @@ const AntdProvider = ({ children }) => {
             fontSizeIcon: 16,
           },
           Button: {
-            paddingBlock: 19,
-            contentFontSize: 16,
-            contentLineHeight: 0,
-            paddingInline: 16,
+            paddingBlock: 0,
+            controlHeight: 40,
+            paddingBlockSM: 8,
+            controlHeightSM: 40,
           },
           Layout: {
-            headerBg: 'rgb(255, 255, 255)',
+            headerBg: palette.gray.white,
             algorithm: true,
+          },
+          Menu: {
+            iconSize: 20,
+          },
+          Dropdown: {
+            paddingBlock: 8,
           },
         },
       }}

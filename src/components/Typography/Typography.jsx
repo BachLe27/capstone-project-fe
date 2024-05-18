@@ -41,12 +41,19 @@ const fontWeights = {
   regular: 400,
 };
 
-const Typography = ({ variant = 'x-small', children, style, fontWeight }) => {
+const Typography = ({
+  variant = 'x-small',
+  children,
+  color,
+  style,
+  fontWeight,
+}) => {
   return (
     <AntdTypography
       style={{
         ...typographyStyles[variant],
         fontWeight: fontWeights[fontWeight],
+        color,
         ...style,
       }}
     >

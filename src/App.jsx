@@ -1,9 +1,10 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BrowserRouter } from 'react-router-dom';
 import AntdProvider from './theme/AntdProvider';
 import Router from './routes';
-import { BrowserRouter } from 'react-router-dom';
+import AuthProvider from './contexts/AuthContext';
 
-function App() {
+const App = () => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -17,11 +18,13 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AntdProvider>
         <BrowserRouter>
-          <Router />
+          <AuthProvider>
+            <Router />
+          </AuthProvider>
         </BrowserRouter>
       </AntdProvider>
     </QueryClientProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

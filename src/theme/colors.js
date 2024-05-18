@@ -1,5 +1,7 @@
+const PRIMARY = '#0A68FF';
+
 const GRAY = {
-  'white': '#FFFFFF',
+  white: '#FFFFFF',
   10: '#F5F5FA',
   20: '#EBEBF0',
   30: '#DDDDE3',
@@ -10,7 +12,7 @@ const GRAY = {
   80: '#515158',
   90: '#38383D',
   100: '#27272A',
-  'black': '#000000'
+  black: '#000000',
 };
 
 const BLUE = {
@@ -23,8 +25,8 @@ const BLUE = {
   70: '#0B74E5',
   80: '#0D5BB5',
   90: '#074183',
-  100: '#052E5C'
-}
+  100: '#052E5C',
+};
 
 const GREEN = {
   10: '#EFFFF4',
@@ -36,8 +38,8 @@ const GREEN = {
   70: '#079449',
   80: '#007D3A',
   90: '#04592C',
-  100: '#03401F'
-}
+  100: '#03401F',
+};
 
 const RED = {
   10: '#FFF0F1',
@@ -49,8 +51,8 @@ const RED = {
   70: '#D93843',
   80: '#BF1D28',
   90: '#910F17',
-  100: '#6E0B12'
-}
+  100: '#6E0B12',
+};
 
 const YELLOW = {
   10: '#FFFCED',
@@ -62,8 +64,8 @@ const YELLOW = {
   70: '#E59900',
   80: '#CC8100',
   90: '#B26500',
-  100: '#995200'
-}
+  100: '#995200',
+};
 
 const ORANGE = {
   10: '#FFF5EB',
@@ -75,8 +77,8 @@ const ORANGE = {
   70: '#E36301',
   80: '#B64F00',
   90: '#903F00',
-  100: '#6C2F00'
-}
+  100: '#6C2F00',
+};
 
 const PURPLE = {
   10: '#F5F1FD',
@@ -88,8 +90,8 @@ const PURPLE = {
   70: '#733DF2',
   80: '#6028E0',
   90: '#4617B2',
-  100: '#371585'
-}
+  100: '#371585',
+};
 
 const ULTRAMARINE = {
   10: '#F2F7FF',
@@ -101,8 +103,8 @@ const ULTRAMARINE = {
   70: '#0A68FF',
   80: '#0157E0',
   90: '#003EA1',
-  100: '#002B70'
-}
+  100: '#002B70',
+};
 
 const palette = {
   gray: GRAY,
@@ -112,7 +114,8 @@ const palette = {
   yellow: YELLOW,
   orange: ORANGE,
   purple: PURPLE,
-  ultramarine: ULTRAMARINE
-}
+  ultramarine: ULTRAMARINE,
+  primary: PRIMARY,
+};
 
 export default palette;

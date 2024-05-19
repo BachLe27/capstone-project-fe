@@ -1,7 +1,6 @@
 import { Logo, Typography } from '@/components';
 import palette from '@/theme/colors';
 import {
-  ApartmentOutlined,
   DeleteOutlined,
   FileAddOutlined,
   FileTextOutlined,
@@ -10,6 +9,7 @@ import {
   PlusOutlined,
   ShareAltOutlined,
   StarOutlined,
+  TeamOutlined,
 } from '@ant-design/icons';
 import { Button, Dropdown, Flex, Menu, Tooltip } from 'antd';
 import Sider from 'antd/es/layout/Sider';
@@ -30,7 +30,7 @@ const Sidebar = () => {
       },
       {
         key: '/organization',
-        icon: <ApartmentOutlined />,
+        icon: <TeamOutlined />,
         label: 'Tổ chức của tôi',
       },
       {

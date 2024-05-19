@@ -11,7 +11,7 @@ const Profile = ({ isModalOpen, handleCancel }) => {
     setIsEditModalOpen(true);
   };
 
-  const handleClose = () => {
+  const handleCloseEditModal = () => {
     setIsEditModalOpen(false);
   };
 
@@ -50,7 +50,10 @@ const Profile = ({ isModalOpen, handleCancel }) => {
           Sửa thông tin cá nhân
         </Button>
       </Flex>
-      <UpdateProfile isModalOpen={isEditModalOpen} handleCancel={handleClose} />
+      <UpdateProfile
+        isModalOpen={isEditModalOpen}
+        handleCancel={handleCloseEditModal}
+      />
     </Modal>
   );
 };

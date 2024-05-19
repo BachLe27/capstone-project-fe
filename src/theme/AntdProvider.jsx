@@ -22,8 +22,7 @@ const AntdProvider = ({ children }) => {
           Button: {
             paddingBlock: 0,
             controlHeight: 40,
-            paddingBlockSM: 8,
-            controlHeightSM: 40,
+            controlHeightSM: 32,
           },
           Layout: {
             headerBg: palette.gray.white,

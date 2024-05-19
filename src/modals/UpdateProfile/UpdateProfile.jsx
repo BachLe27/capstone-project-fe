@@ -11,14 +11,20 @@ import {
   Form,
   Input,
   Modal,
+  Switch,
   Tag,
   Tooltip,
 } from 'antd';
 import { Typography } from '../../components';
 
 const Profile = ({ isModalOpen, handleCancel }) => {
+  const [form] = Form.useForm();
+
+  const updatePassword = Form.useWatch('updatePassword', form);
+
   const handleSubmit = (e) => {
     console.log(e);
+    handleCancel();
   };
 
   return (
@@ -65,6 +71,7 @@ const Profile = ({ isModalOpen, handleCancel }) => {
         <Typography variant="medium">admin@gmail.com</Typography>
 
         <Form
+          form={form}
           name="updateProfileForm"
           onFinish={handleSubmit}
           layout="vertical"
@@ -90,21 +97,30 @@ const Profile = ({ isModalOpen, handleCancel }) => {
             />
           </Form.Item>
 
-          <Form.Item
-            name="password"
-            label="Mật khẩu"
-            rules={[{ required: true, message: 'Vui lòng nhập mật khẩu' }]}
-          >
-            <Input.Password placeholder="Mật khẩu" />
+          <Form.Item label="Đổi mật khẩu" name="updatePassword">
+            <Switch />
           </Form.Item>
 
-          <Form.Item
-            name="rePassword"
-            label="Nhập lại mật khẩu"
-            rules={[{ required: true, message: 'Vui lòng nhập mật khẩu' }]}
-          >
-            <Input.Password placeholder="Mật khẩu" />
-          </Form.Item>
+          {updatePassword && (
+            <>
+              <Form.Item
+                name="password"
+                label="Mật khẩu hiện tại"
+                rules={[{ required: true, message: 'Vui lòng nhập mật khẩu' }]}
+              >
+                <Input.Password placeholder="Mật khẩu hiện tại" />
+              </Form.Item>
+              <Form.Item
+                name="newPassword"
+                label="Mật khẩu mới"
+                rules={[
+                  { required: true, message: 'Vui lòng nhập mật khẩu mới' },
+                ]}
+              >
+                <Input.Password placeholder="Mật khẩu mới" />
+              </Form.Item>
+            </>
+          )}
         </Form>
       </Flex>
     </Modal>

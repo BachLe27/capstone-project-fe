@@ -27,8 +27,6 @@ const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [me, setMe] = useState(null);
 
-  console.log(me);
-
   const logout = useCallback(async () => {
     try {
       token.removeRefreshToken();

@@ -1,7 +1,5 @@
-import { Typography } from '@/components';
 import useAuth from '@/hooks/useAuth';
 import { Profile } from '@/modals';
-import palette from '@/theme/colors';
 import {
   BellOutlined,
   LogoutOutlined,
@@ -44,16 +42,7 @@ const Header = () => {
   ];
 
   return (
-    <Flex justify="space-between" align="center">
-      <Flex vertical>
-        <Typography variant="3x" fontWeight="medium">
-          Welcome to GeniFast
-        </Typography>
-        <Typography variant="x" fontWeight="regular" color={palette.gray[60]}>
-          Hello, Bach Le ✌️
-        </Typography>
-      </Flex>
-
+    <Flex justify="flex-end" align="center">
       <Flex align="center" gap={8}>
         <Button
           shape="circle"

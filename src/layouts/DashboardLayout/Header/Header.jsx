@@ -28,7 +28,7 @@ const Header = () => {
 
   const accountMenu = [
     {
-      label: 'Thông tin cá nhân',
+      label: 'Thông tin tài khoản',
       href: '/profile',
       key: 'profile',
       icon: <UserOutlined style={{ fontSize: 16 }} />,

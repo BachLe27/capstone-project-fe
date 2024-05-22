@@ -14,6 +14,18 @@ export const login = (username, password) => {
   });
 };
 
+export const loginWithGoogleApi = (username, password) => {
+  return publicApi({
+    method: 'POST',
+    url: `${SERVICE_PATH}/login`,
+    data: {
+      phone: username,
+      password,
+      platformId: 1,
+    },
+  });
+};
+
 export const refreshToken = () =>
   publicApi({
     method: 'GET',

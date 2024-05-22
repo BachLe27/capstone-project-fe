@@ -46,7 +46,7 @@ const Profile = ({ isModalOpen, handleCancel }) => {
       onCancel={handleCancel}
       title={
         <Typography variant="large" fontWeight="semi-bold">
-          Sửa thông tin cá nhân
+          Sửa thông tin tài khoản
           <Divider />
         </Typography>
       }

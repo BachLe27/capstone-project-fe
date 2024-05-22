@@ -1,0 +1,14 @@
+{
+  "userMenu": {
+    "profile": "Thông tin cá nhân",
+    "logout": "Đăng xuất"
+  },
+  "settingMenu": {
+    "language": "Ngôn ngữ",
+    "logout": "Đăng xuất"
+  },
+  "hero": {
+    "heading": "Intelligent Text and Multimedia Data Management",
+    "subHeading": "Search Made Easier with AI Assistance"
+  }
+}

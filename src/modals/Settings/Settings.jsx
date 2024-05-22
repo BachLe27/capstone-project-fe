@@ -1,20 +1,8 @@
 import { Avatar, Button, Divider, Flex, Modal, Tag } from 'antd';
 import { ApartmentOutlined, UserOutlined } from '@ant-design/icons';
-import { useState } from 'react';
 import { Typography } from '../../components';
-import { UpdateProfile } from '..';
 
-const Profile = ({ isModalOpen, handleCancel }) => {
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
-  const handleOpenEditModal = () => {
-    setIsEditModalOpen(true);
-  };
-
-  const handleCloseEditModal = () => {
-    setIsEditModalOpen(false);
-  };
-
+const Settings = ({ isModalOpen, handleCancel }) => {
   return (
     <Modal
       footer={null}
@@ -42,20 +30,9 @@ const Profile = ({ isModalOpen, handleCancel }) => {
           Lê Công Bách
         </Typography>
         <Typography variant="medium">admin@gmail.com</Typography>
-        <Button
-          onClick={() => {
-            handleOpenEditModal();
-          }}
-        >
-          Sửa thông tin tài khoản
-        </Button>
       </Flex>
-      <UpdateProfile
-        isModalOpen={isEditModalOpen}
-        handleCancel={handleCloseEditModal}
-      />
     </Modal>
   );
 };
 
-export default Profile;
+export default Settings;

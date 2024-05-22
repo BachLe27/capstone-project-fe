@@ -1,0 +1,14 @@
+{
+  "userMenu": {
+    "profile": "Thông tin tài khoản",
+    "logout": "Đăng xuất"
+  },
+  "settingMenu": {
+    "language": "Ngôn ngữ",
+    "logout": "Đăng xuất"
+  },
+  "hero": {
+    "heading": "Quản lý dữ liệu văn bản và đa phương tiện thông minh",
+    "subHeading": "Tìm kiếm dễ dàng hơn với sự hỗ trợ của AI"
+  }
+}

@@ -51,7 +51,7 @@ const Sidebar = () => {
     ];
   }, []);
 
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const handleClick = (e) => {
     console.log(e);

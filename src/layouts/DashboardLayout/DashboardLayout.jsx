@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }) => {
       <Layout>
         <Content>
           <Flex
-            style={{ padding: '28px 40px', height: '100%' }}
+            style={{ padding: '28px 60px', height: '100%' }}
             vertical
             gap={24}
           >

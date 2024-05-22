@@ -134,7 +134,7 @@ const HomePage = () => {
           style={{
             height: '100%',
             backgroundColor: palette.gray.white,
-            padding: '28px 52px',
+            padding: '28px 32px',
             borderRadius: 8,
           }}
         >

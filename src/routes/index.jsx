@@ -1,13 +1,27 @@
 import { Navigate, useRoutes } from 'react-router-dom';
+import React from 'react';
 
-import { RequireAuthContainer } from '@/components';
+import { RequireAuthContainer, SuspenseContainer } from '@/components';
+import useAuth from '@/hooks/useAuth';
 import AuthenticationLayout from '@/layouts/AuthenticationLayout/AuthenticationLayout';
 import DashboardLayout from '@/layouts/DashboardLayout/DashboardLayout';
-import LoginPage from '@/pages/Authentication/Login/LoginPage';
-import RegisterPage from '@/pages/Authentication/Register/RegisterPage';
-import HomePage from '@/pages/Home/HomePage';
-import useAuth from '@/hooks/useAuth';
+
 import ProtectedRoute from './ProtectedRoute';
+
+const HomePage = React.lazy(() => import('@/pages/Home/HomePage'));
+
+// Authentication
+const LoginPage = React.lazy(
+  () => import('@/pages/Authentication/Login/LoginPage'),
+);
+const RegisterPage = React.lazy(
+  () => import('@/pages/Authentication/Register/RegisterPage'),
+);
+
+// Manage organization
+const ManageOrganizationPage = React.lazy(
+  () => import('@/pages/Admin/Organization/ManageOrganizationPage'),
+);
 
 const Router = () => {
   const { isAuthenticated } = useAuth();
@@ -21,6 +35,10 @@ const Router = () => {
           children: [
             { path: '/home', element: <HomePage /> },
             { path: '/', element: <HomePage /> },
+            {
+              path: '/manage-organization',
+              element: <ManageOrganizationPage />,
+            },
           ],
         },
       ],
@@ -46,7 +64,7 @@ const Router = () => {
     },
   ]);
 
-  return routes;
+  return <SuspenseContainer>{routes}</SuspenseContainer>;
 };
 
 export default Router;

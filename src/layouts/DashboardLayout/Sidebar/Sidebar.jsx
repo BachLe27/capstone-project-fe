@@ -1,6 +1,7 @@
 import { Logo, Typography } from '@/components';
 import palette from '@/theme/colors';
 import {
+  ApartmentOutlined,
   DeleteOutlined,
   FileAddOutlined,
   FileTextOutlined,
@@ -14,6 +15,7 @@ import {
 import { Button, Dropdown, Flex, Menu, Tooltip } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
   const siderMenu = useMemo(() => {
@@ -22,6 +24,11 @@ const Sidebar = () => {
         key: '/home',
         icon: <HomeOutlined />,
         label: 'Trang chủ',
+      },
+      {
+        key: '/manage-organization',
+        icon: <ApartmentOutlined />,
+        label: 'Quản lý tổ chức',
       },
       {
         key: '/my-files',
@@ -33,6 +40,7 @@ const Sidebar = () => {
         icon: <TeamOutlined />,
         label: 'Tổ chức của tôi',
       },
+
       {
         key: '/shared',
         icon: <ShareAltOutlined />,
@@ -52,9 +60,10 @@ const Sidebar = () => {
   }, []);
 
   const [collapsed, setCollapsed] = useState(true);
-
+  const navigate = useNavigate();
   const handleClick = (e) => {
     console.log(e);
+    navigate(e.key);
   };
 
   const addFileMenu = [
@@ -136,6 +145,9 @@ const Sidebar = () => {
           mode="vertical"
           style={{ height: '100%', borderRight: 0 }}
           items={siderMenu}
+          onClick={(e) => {
+            navigate(e.key);
+          }}
         />
       </Flex>
     </Sider>

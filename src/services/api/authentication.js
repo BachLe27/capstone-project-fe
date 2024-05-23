@@ -7,28 +7,25 @@ export const login = (username, password) => {
     method: 'POST',
     url: `${SERVICE_PATH}/login`,
     data: {
-      phone: username,
+      email: username,
       password,
-      platformId: 1,
     },
   });
 };
 
-export const loginWithGoogleApi = (username, password) => {
+export const loginWithGoogleApi = (data) => {
   return publicApi({
     method: 'POST',
-    url: `${SERVICE_PATH}/login`,
-    data: {
-      phone: username,
-      password,
-      platformId: 1,
-    },
+    url: `${SERVICE_PATH}/social-login`,
+    data,
   });
 };
 
-export const refreshToken = () =>
+export const getNewToken = (refreshToken) =>
   publicApi({
-    method: 'GET',
+    method: 'POST',
     url: `${SERVICE_PATH}/refresh-token`,
-    withCredentials: true,
+    data: {
+      refresh_token: refreshToken,
+    },
   });

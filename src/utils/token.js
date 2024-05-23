@@ -1,53 +1,25 @@
-import Cookies from 'js-cookie';
-
-/**
- * Get access token from local storage
- * @returns Return access token
- */
 const getAccessToken = () => {
   return localStorage.getItem('accessToken');
 };
 
-/**
- * Set access token to local storage
- * @param accessToken
- */
 const setAccessToken = (accessToken) => {
   localStorage.setItem('accessToken', accessToken);
 };
 
-/**
- * Remove access token to local storage
- */
 const removeAccessToken = () => {
   localStorage.removeItem('accessToken');
 };
 
-/**
- * Get access token from local storage
- * @returns Return refresh token
- */
 const getRefreshToken = () => {
-  return Cookies.get('refreshToken');
+  return localStorage.getItem('refreshToken');
 };
 
-/**
- * Set refresh token to cookie
- * @param refreshToken
- */
 const setRefreshToken = (refreshToken) => {
-  const cookieOptions = {
-    expires: 30, // Expires in 30 days
-  };
-
-  Cookies.set('refreshToken', refreshToken, cookieOptions);
+  localStorage.setItem('refreshToken', refreshToken);
 };
 
-/**
- * Remove refresh token to local storage
- */
 const removeRefreshToken = () => {
-  Cookies.remove('refreshToken');
+  localStorage.removeItem('refreshToken');
 };
 
 const token = {
